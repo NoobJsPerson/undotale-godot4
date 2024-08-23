@@ -19,7 +19,6 @@ func update_size():
 	shapes.get_child(3).position.x = self.size.x + 100 - border
 
 func resize(dimension : Vector2, newpos = null, top = 1, bot = 1, time = 1.5):
-	var pos_tween = get_tree().create_tween()
 	var resize_tween = get_tree().create_tween()
 	resize_tween.tween_property(
 		self,
@@ -72,6 +71,7 @@ func resize(dimension : Vector2, newpos = null, top = 1, bot = 1, time = 1.5):
 	
 	# resize_tween.start()
 	if newpos != null:
+		var pos_tween = get_tree().create_tween()
 		pos_tween.tween_property(
 			self,
 			":position",
