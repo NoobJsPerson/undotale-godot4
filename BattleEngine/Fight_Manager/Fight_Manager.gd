@@ -8,7 +8,7 @@ var enabled = false # was "enable"
 
 var possiblePositions = [285,315,350]
 var positionArray = []
-var soul
+@onready var soul = %Soul
 
 var children = []
 
@@ -21,6 +21,7 @@ func cutscene(arg): # ether: to be overloaded?
 	pass
 
 func _ready():
+	#enable(soul)
 	cutscene_end.connect(get_selection) # connect("cutscene_end", Callable(self, "selection"))
 
 func _process(delta):
@@ -47,7 +48,7 @@ func enable(_soul):
 		if !child.spared:
 			children.append(child)
 
-	positionArray = possiblePositions.slice(0, children.size() - 1)
+	positionArray = possiblePositions.slice(0, children.size())
 	self.soul = _soul
 	connect("select", Callable(self, "disable"))
 	await get_tree().create_timer(0.1).timeout

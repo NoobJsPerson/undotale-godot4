@@ -8,7 +8,7 @@ var enabled = false
 var positionArray = [50,205,362,517]
 var soul
 
-@onready var children = self.get_children().slice(0,3)
+@onready var children = self.get_children().slice(0,4)
 
 signal select
 

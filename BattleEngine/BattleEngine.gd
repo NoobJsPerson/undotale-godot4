@@ -57,8 +57,8 @@ func target():
 	await enemies.select
 	selection = enemies.get_selection()
 	
-	if enemies.enable:
-		enemies.enable = false
+	if enemies.enabled:
+		enemies.enabled = false
 		playersTurn()
 		return
 	
@@ -83,8 +83,8 @@ func target():
 			acting.enable(soul)
 			await acting.select
 			
-			if acting.enable:
-				acting.enable = false
+			if acting.enabled:
+				acting.enabled = false
 				target()
 				return
 			
@@ -107,7 +107,7 @@ func slay():
 	var damage = Damage.instantiate()
 	damage.position = selection.position
 	selection.shake(15)
-	damage.get_node("Label").text = String(selection.DEF)
+	damage.get_node("Label").text = str(selection.DEF)
 	
 	add_child(damage)
 	

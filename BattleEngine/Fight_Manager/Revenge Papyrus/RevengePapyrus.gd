@@ -3,7 +3,6 @@ extends Fight_Manager
 # MAKE CUSTOM CUTSCENES AS YOU WISH
 
 @onready var bone_tscn = preload("res://BattleEngine/Fight_Manager/Revenge Papyrus/Attacks/Bone.tscn")
-
 var cutscene_counter = 0
 var box
 

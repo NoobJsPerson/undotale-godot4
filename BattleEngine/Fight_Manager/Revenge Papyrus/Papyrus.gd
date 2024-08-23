@@ -39,7 +39,7 @@ func shake(amount):
 	else:
 		store_amnt = 0
 
-func acting():
+func acting(selection):
 	#Custom behaviour!
 	pass
 
